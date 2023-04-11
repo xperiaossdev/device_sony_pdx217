@@ -18,15 +18,29 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Cherish stuff.
-TARGET_BOOT_ANIMATION_RES := 1080
+# Inherit some common PixelExperience stuff.
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Inherit from device.mk
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
+# Environment Flags
 IS_PHONE := true
-TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_BUILD_WITH_LTO := true
+
+# Boot Animation
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1096
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_BOOTANIMATION_HALF_RES := true
+
+# PE-Specific Flags
+TARGET_SUPPORTS_QUICK_TAP := false
+
+# GMS
+WITH_GMS := true
+
+# Device Identifiers
 PRODUCT_NAME := aosp_pdx217
 PRODUCT_DEVICE := pdx217
 PRODUCT_MANUFACTURER := Sony
@@ -36,8 +50,6 @@ PRODUCT_MODEL := Xperia Pro-I
 PRODUCT_GMS_CLIENTID_BASE := android-sonymobile
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE=pdx217 \
-    TARGET_PRODUCT=Xperia Pro-I \
-    PRIVATE_BUILD_DESC="Sony/qssi/qssi:13/TKQ1.220807.001/1:user/release-keys"
+    PRIVATE_BUILD_DESC="XQ-BE52-user 13 61.2.F.0.170 061002A000039600046651803 release-keys"
 
-BUILD_FINGERPRINT := Sony/qssi/qssi:13/TKQ1.220807.001/1:user/release-keys
+BUILD_FINGERPRINT := Sony/qssi/qssi:13/61.2.F.0.170/061002A000038800046651803:user/release-keys
