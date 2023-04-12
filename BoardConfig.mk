@@ -1,4 +1,3 @@
-
 # Copyright (C) 2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -246,7 +245,7 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/props/vendor.prop
 TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/configs/props/system_ext.prop
 
 # OTA Assert
-TARGET_OTA_ASSERT_DEVICE := pdx217,XQ-BE42,XQ-BE52,XQ-BE62,XQ-BE72
+TARGET_OTA_ASSERT_DEVICE := pdx217,XQ-BE42,XQ-BE52,XQ-BE72
 
 # Quick Tap
 TARGET_SUPPORTS_QUICK_TAP := false
